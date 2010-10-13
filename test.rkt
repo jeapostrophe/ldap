@@ -14,10 +14,14 @@
 (test
  (get-up "Route Y"
          (λ (u p)
-           (ldap-authenticate "ldap.byu.edu" 389 (format "uid=~a,ou=People,o=BYU.edu" u) p)))
+           (ldap-authenticate "ldap.byu.edu" 389 (format "uid=~a,ou=People,o=byu.edu" u) p)))
  =>
  #t
  
- (ldap-authenticate "ldap.byu.edu" 389 (format "uid=~a,ou=People,o=BYU.edu" "bad") "password")
+ (ldap-authenticate "ldap.byu.edu" 389 (format "uid=~a,ou=People,o=byu.edu" "bad") "password")
+ =>
+ #f
+ 
+ (ldap-authenticate "ldap.byu.edu" 389 (format "uid=~a,ou=People,o=byu.edu" "jaymcc") "password")
  =>
  #f)
