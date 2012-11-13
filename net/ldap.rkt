@@ -1,4 +1,4 @@
-#lang racket
+#lang racket/base
 #| Non-robust LDAP based on
 
 http://tools.ietf.org/html/rfc4511
@@ -8,7 +8,10 @@ http://en.wikipedia.org/wiki/Basic_Encoding_Rules
 https://www.opends.org/wiki/page/DefBasicEncodingRules
 
 |#
-(require unstable/contract)
+(require unstable/contract
+         racket/contract
+         racket/tcp
+         racket/match)
 
 (struct ldap (to from))
 

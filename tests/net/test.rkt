@@ -1,5 +1,5 @@
-#lang racket
-(require "main.rkt"
+#lang racket/base
+(require net/ldap
          tests/eli-tester)
 
 (define (get-up prompt k)
