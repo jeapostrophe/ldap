@@ -2,7 +2,7 @@
 @(require scribble/manual
           (for-label racket
                      unstable/contract
-                     "main.rkt"))
+                     net/ldap))
 
 @title{LDAP}
 @author{@(author+email "Jay McCarthy" "jay@racket-lang.org")}
