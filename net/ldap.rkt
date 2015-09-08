@@ -8,8 +8,7 @@ http://en.wikipedia.org/wiki/Basic_Encoding_Rules
 https://www.opends.org/wiki/page/DefBasicEncodingRules
 
 |#
-(require unstable/contract
-         racket/contract
+(require racket/contract
          racket/tcp
          racket/match)
 

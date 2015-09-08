@@ -1,7 +1,7 @@
 #lang scribble/doc
 @(require scribble/manual
           (for-label racket
-                     unstable/contract
+                     racket/tcp
                      net/ldap))
 
 @title{LDAP}
