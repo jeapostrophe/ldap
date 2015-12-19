@@ -1,3 +1,3 @@
 #lang setup/infotab
 (define name "LDAP")
-(define scribblings '(("ldap.scrbl" (multi-page))))
+(define scribblings '(("ldap.scrbl" (multi-page) (net-library))))
