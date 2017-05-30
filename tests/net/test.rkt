@@ -2,26 +2,15 @@
 (require net/ldap
          tests/eli-tester)
 
-(define (get-up prompt k)
-  (printf "~a > username: " prompt)
-  (flush-output)
-  (define u (read-line))
-  (printf "~a > passsword " prompt)
-  (flush-output)
-  (define p (read-line))
-  (k u p))
-
 (test
- (get-up "Route Y"
-         (λ (u p)
-           (ldap-authenticate "ldap.byu.edu" 389 (format "uid=~a,ou=People,o=byu.edu" u) p)))
+ (ldap-authenticate "ldap.forumsys.com" 389 "uid=tesla,dc=example,dc=com" "password")
  =>
  #t
  
- (ldap-authenticate "ldap.byu.edu" 389 (format "uid=~a,ou=People,o=byu.edu" "bad") "password")
+ (ldap-authenticate "ldap.forumsys.com" 389 "uid=tesla,dc=example,dc=com" "password!")
  =>
  #f
- 
- (ldap-authenticate "ldap.byu.edu" 389 (format "uid=~a,ou=People,o=byu.edu" "jaymcc") "password")
+
+ (ldap-authenticate "ldap.forumsys.com" 389 "uid=t3sla,dc=example,dc=com" "password")
  =>
  #f)
